@@ -1,0 +1,29 @@
+{
+  "name": "strange-case",
+  "version": "0.0.0",
+  "description": "a simple static site generator for jade and markdown",
+  "main": "index.js",
+  "dependencies": {
+    "jade": "~0.29.0",
+    "marked": "~0.2.8",
+    "mkdirp": "~0.3.5",
+    "underscore": "~1.4.4",
+    "optimist": "~0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vicapow/strange-case.git"
+  },
+  "author": "Victor Powell <vicapow@gmail.com>",
+  "license": "BSD",
+  "gitHead": "64f5354e1258a41af42aec24192020511a37dac5",
+  "readmeFilename": "README.md",
+  "preferGlobal": "true",
+  "bin": {
+    "strange-case": "index.js"
+  }
+}
