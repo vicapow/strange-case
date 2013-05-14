@@ -6,8 +6,9 @@ var jade = require('jade')
   , fs = require('fs')
   , getFiles = require('./getfiles.js')
   , path = require('path')
-  , optimist = require('optimist')
+  , argv = require('optimist')
       .default('output', 'public')
+      .default('pretty', true)
       .argv
 
 getFiles('views', function(files){
@@ -17,10 +18,10 @@ getFiles('views', function(files){
   _.each(files, function(file){
     var fn = jade.compile(fs.readFileSync(file), {
       filename : file
-      , pretty : true
+      , pretty : argv.pretty
     })
     var out = file.replace(/^views/, '')
-    out = path.join(optimist.output , out)
+    out = path.join(argv.output , out)
     out = out.replace(/\.jade$/,'.html')
     mkdirp.sync(path.dirname(out))
     fs.writeFileSync(out, fn())
